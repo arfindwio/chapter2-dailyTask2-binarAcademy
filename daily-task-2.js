@@ -310,7 +310,7 @@ const arrOfObj = [
 
 // 1) display/print person yang registered dibawah tahun 2022
 console.log("1) display/print person yang registered dibawah tahun 2022");
-const result1 = arrOfObj.filter((person) => person.registered.match("2022") < 2022);
+const result1 = arrOfObj.filter((person) => person.registered.slice(0, 4) < 2022);
 console.log(result1);
 
 // 2) display person yang address nya Bali
@@ -411,7 +411,7 @@ console.log(result9);
 console.log("10) display person yang mempunyai friends gender male atau favorite fruit nya banana dan registered di tahun 2023");
 const result10 = arrOfObj.filter((person) => {
   for (let i = 0; i < person.friends.length; i++) {
-    if (person.friends[i].gender === "male" || (person.friends[i].favoriteFruit === "banana" && person.registered.match("2023") === "2023")) {
+    if (person.friends[i].gender === "male" || (person.friends[i].favoriteFruit === "banana" && person.registered.slice(0, 4) === 2023)) {
       console.log(person);
     }
   }
